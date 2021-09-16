@@ -59,7 +59,7 @@ public class Practive1 {
         }
 
         //Các tháng có 30 ngày hay 31 ngày
-        System.out.println("Nhập vào số tháng");
+        System.out.println("Enter month number");
         int month = scanner.nextInt();
         String daysInMonth;
         switch (month){
@@ -77,8 +77,31 @@ public class Practive1 {
             case 11: daysInMonth = "30"; break;
             default: daysInMonth = "";
         }
-        if (!daysInMonth.equals("")) System.out.printf("The month '%d' has %s days!", month, daysInMonth);//Nếu chuỗi daysInMonth khác với chuỗi ""(rỗng) tức là không rơi vào trường hợp default
+        if (!daysInMonth.equals("")) System.out.printf("The month '%d' has %s days!\n", month, daysInMonth);//Nếu chuỗi daysInMonth khác với chuỗi ""(rỗng) tức là không rơi vào trường hợp default
         //println để in ra text, printf để in ra text có kèm biến gán biến số nguyên month vào %d và biến chuỗi daysInMonth vào %s
         else System.out.print("Invalid input!");
+
+        //Kiểm tra năm nhuận
+        System.out.println("Enter year number");
+        int year = scanner.nextInt();
+        boolean isLeapYear = false; //bạo một biến isLeapYear có kiểu dữ liệu boolean cho giá trị là false
+
+        boolean isDivisibleBy4 = year % 4 == 0; //tạo biến boolean isDivisibleBy4 = biểu thức để kiểm tra xem là true hay false
+        if (isDivisibleBy4){//Nếu biến isDivisibleBy4 trả về true
+            boolean isDivisible100 = year % 100 == 0; //Thì tạo biến isDivisible100 = biểu thức để kiểm tra
+            if (isDivisible100){//Nếu biến trên trả về true
+                boolean isDivisible400 = year % 400 == 0;//Tạo tiếp biến isDivisible400 = biểu thức để kiểm tra
+                if (isDivisible400){//Nếu biến trên vẫn đúng
+                    isLeapYear = true;//Thì thay đổi biến isLeapYear = true
+                }
+            }else{//Còn nếu điều kiện isDivisible100 trả về false
+                isLeapYear = true;//Thì isLeapYear = false
+            }
+        }
+        if (isLeapYear){
+            System.out.printf("%d is a leap year",year);
+        }else{
+            System.out.printf("%d is NOT a leap year",year);
+        }
     }
 }
