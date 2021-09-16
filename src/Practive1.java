@@ -1,4 +1,5 @@
 import java.util.Date;
+import java.util.Scanner;
 
 public class Practive1 {
     public static void main(String[] args) {
@@ -16,6 +17,21 @@ public class Practive1 {
         System.out.println("b = "+b);
         System.out.println("c = "+c);
         System.out.println("s = "+s);
+        //Thực hành sử dụng toán tử
+        float width; // khai báo biến width có kiểu dữ liệu float
+        float height;//khai báo biến height có kiểu dữ liệu float
+        float area;//khai báo biến area có kiểu dữ liệu float
 
+        Scanner scanner = new Scanner(System.in);//tạo đối tượng scanner từ lớp Scanner
+
+        System.out.println("Enter width: ");//cú pháp in ra màn hình
+        width = scanner.nextFloat();//gán biến width = với phương thức nextFloat() trong đối tượng scanner để người dùng nhập vào giá trị
+
+        System.out.println("Enter height");//cú pháp in ra màn hình
+        height = scanner.nextFloat();//gán height = phương thức nextFloat() trong đối tượng scanner để người dùng nhập vào
+
+        area = width*height;//biến area = với width x height
+
+        System.out.println("Area is: "+area);//in ra màn hình oh ngạc nhiên
     }
 }
