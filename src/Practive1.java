@@ -33,5 +33,32 @@ public class Practive1 {
         area = width*height;//biến area = với width x height
 
         System.out.println("Area is: "+area);//in ra màn hình oh ngạc nhiên
+
+
+        //Phuong trinh bac nhat
+        System.out.println("Linear Equation Resolver");//in ra màn hình dòng thông báo
+        System.out.println("Given a equation as 'a * x + b = c', please enter constants:");
+
+        System.out.println("a: ");
+        double soA = scanner.nextDouble();//Nhập vào biến soA có kiểu double
+
+        System.out.println("b: ");
+        double soB = scanner.nextDouble();
+
+        System.out.println("c: ");
+        double soC = scanner.nextDouble();
+        if (soA != 0){
+            double answer = (soC - soB)/ soA;
+            System.out.printf("Equation pass with x = %f!\n", answer); //in ra answer được gán vào %f với \n là xuống dòng
+        }else{
+            if (soB == soC){
+                System.out.println("The solution is all x!");
+            }else{
+                System.out.println("No solution");
+            }
+        }
+
+
+        
     }
 }
