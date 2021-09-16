@@ -99,9 +99,31 @@ public class Practive1 {
             }
         }
         if (isLeapYear){
-            System.out.printf("%d is a leap year",year);
+            System.out.printf("%d is a leap year\n",year);
         }else{
-            System.out.printf("%d is NOT a leap year",year);
+            System.out.printf("%d is NOT a leap year\n",year);
         }
+
+        //Tính chỉ số cân nặng cơ thể
+        double weight, height1, bmi;
+        System.out.print("Your weight (in kilogram): ");
+        weight = scanner.nextDouble();
+        System.out.print("Your height (in meter): ");
+        height1 = scanner.nextDouble();
+        bmi = weight/Math.pow(height1, 2);//bmi = cân nặng chia cho chiều cao mũ 2
+        System.out.printf("%-20s%s","bmi","Interpretation\n");
+
+        boolean bmi1 = bmi < 18;
+        boolean bmi2 = bmi < 25.0;
+        boolean bmi3 = bmi < 30.0;
+
+        if (bmi1)
+            System.out.printf("%-10.2f%s", bmi, "Underweight\n");
+        else if (bmi2)
+            System.out.printf("%-20.2f%s", bmi, "Nomal");
+        else if (bmi3)
+            System.out.printf("%-20.2f%s", bmi, "Overweight");
+        else
+            System.out.printf("%-20.2f%s", bmi, "Obese");
     }
 }
